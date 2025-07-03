@@ -2,8 +2,13 @@ package zairastra.dao;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.TypedQuery;
+import zairastra.entities.Concert;
 import zairastra.entities.Event;
+import zairastra.entities.enums.ConcertGenre;
 import zairastra.exceptions.NotFound;
+
+import java.util.List;
 
 public class EventsDAO {
     //ENTITYMANAGER SERVE A GESTIRE I METODI TUTTI NEL DAO PASSANDOLA COME PARAMETRO IN MODO DA LASCIARE PULITO IL MAIN
@@ -51,4 +56,20 @@ public class EventsDAO {
         System.out.println("L'evento " + newEvent.getName() + " è stato rimosso dall'agenda");
     }
 
+
+    //estendo event per Concert
+    //getConcertsperGenre
+
+    public List<Concert> getConcertsperGenre(ConcertGenre genere) {
+        TypedQuery<Concert> query = entityManager.createQuery("SELECT c FROM Concert c WHERE c.genere = :genere", Concert.class);
+        query.setParameter("genere", genere);
+        return query.getResultList();
+    }
+
+    //getStreamingConcert
+    public List<Concert> getStreamingConcert(boolean streaming) {
+        TypedQuery<Concert> query = entityManager.createQuery("SELECT c FROM Concert c WHERE c.streaming = :streaming", Concert.class);
+        query.setParameter("streaming", streaming);
+        return query.getResultList();
+    }
 }

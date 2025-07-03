@@ -1,5 +1,6 @@
 package zairastra.entities;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import zairastra.entities.enums.ConcertGenre;
@@ -7,6 +8,7 @@ import zairastra.entities.enums.EventType;
 
 import java.time.LocalDate;
 
+@Entity
 public class Concert extends Event {
     @Enumerated(EnumType.STRING)
     private ConcertGenre genre;

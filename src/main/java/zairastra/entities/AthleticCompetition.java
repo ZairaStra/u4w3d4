@@ -1,14 +1,12 @@
 package zairastra.entities;
 
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import zairastra.entities.enums.EventType;
 
 import java.time.LocalDate;
 import java.util.Set;
 
+@Entity
 public class AthleticCompetition extends Event {
 
     //AthleticCompetition è in relazione con Person perchè serve una lista di partecipanti a ogni gara

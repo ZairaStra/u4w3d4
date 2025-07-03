@@ -7,6 +7,10 @@
         <class>zairastra.entities.Event</class>
         <class>zairastra.entities.Partecipation</class>
         <class>zairastra.entities.Person</class>
+        <class>zairastra.entities.Concert</class>
+        <class>zairastra.entities.FootbalMatch</class>
+        <class>zairastra.entities.AthleticCompetition</class>
+
         <!-- Serve specificare l'elenco delle entities con tanto di package -->
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/u4w3d4"/>

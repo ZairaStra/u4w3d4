@@ -9,10 +9,15 @@ import zairastra.entities.enums.EventType;
 import java.time.LocalDate;
 import java.util.List;
 
+//INVECE CHE RENDERE EVENT ASTRATTA AVREI POTUTO CREARE DEGLI ENUM E GESTIRLA COSì?
 @Entity //  QUESTO è FONDAMENTALE PER LEGARE AL DB
 
 @Table(name = "events") // QUESTO è OPZIONALE - CAMBIA IL NOME DELLA TABELLA
-public class Event {
+
+//scelgo il tipo di modello
+@Inheritance(strategy = InheritanceType.JOINED)
+
+public abstract class Event {
 
     //ATTRIBUTI
 

@@ -60,9 +60,9 @@ public class EventsDAO {
     //estendo event per Concert
     //getConcertsperGenre
 
-    public List<Concert> getConcertsperGenre(ConcertGenre genere) {
-        TypedQuery<Concert> query = entityManager.createQuery("SELECT c FROM Concert c WHERE c.genere = :genere", Concert.class);
-        query.setParameter("genere", genere);
+    public List<Concert> getConcertsperGenre(ConcertGenre genre) {
+        TypedQuery<Concert> query = entityManager.createQuery("SELECT c FROM Concert c WHERE c.genre = :genre", Concert.class);
+        query.setParameter("genre", genre);
         return query.getResultList();
     }
 
